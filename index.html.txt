@@ -14,13 +14,14 @@
         }
         
         :root {
-            --primary: #d32f2f; /* Japanese red */
-            --secondary: #5d4037; /* Dark brown for wood elements */
+            --primary: #d32f2f;
+            --secondary: #5d4037;
             --dark: #212121;
             --light: #f5f5f5;
-            --accent: #ffc107; /* Gold accent */
+            --accent: #ffc107;
             --success: #2e7d32;
             --warning: #ed6c02;
+            --admin-color: #3f51b5;
         }
         
         body {
@@ -37,7 +38,6 @@
             padding: 0 15px;
         }
         
-        /* Header Styles */
         header {
             background-color: var(--dark);
             color: white;
@@ -54,7 +54,6 @@
             align-items: center;
         }
         
-        /* Logo Styles */
         .logo {
             display: flex;
             align-items: center;
@@ -150,7 +149,27 @@
             color: var(--primary);
         }
         
-        /* Hero Section */
+        .admin-login-btn {
+            background-color: var(--admin-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 1000;
+            position: relative;
+        }
+        
+        .admin-login-btn:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px);
+        }
+        
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
@@ -234,7 +253,6 @@
             }
         }
         
-        /* Features Section */
         .features {
             padding: 50px 0;
             background-color: white;
@@ -315,7 +333,6 @@
             font-size: 0.95rem;
         }
         
-        /* Menu Section */
         .menu {
             padding: 50px 0;
             background-color: #f8f5f2;
@@ -448,7 +465,6 @@
             box-shadow: 0 5px 10px rgba(211,47,47,0.3);
         }
         
-        /* Delivery Section */
         .delivery {
             padding: 50px 0;
             background-color: white;
@@ -540,7 +556,6 @@
             color: var(--primary);
         }
         
-        /* Contact Section */
         .contact {
             padding: 50px 0;
             background: linear-gradient(135deg, var(--dark) 0%, #424242 100%);
@@ -600,7 +615,6 @@
             line-height: 1.7;
         }
         
-        /* Footer */
         footer {
             background-color: var(--secondary);
             color: #f5f5f5;
@@ -673,7 +687,6 @@
             transform: translateY(-3px);
         }
         
-        /* Cart Summary Styles */
         .cart-summary {
             position: fixed;
             bottom: 80px;
@@ -715,7 +728,6 @@
             font-weight: 700;
         }
         
-        /* Quantity Modal Styles */
         .quantity-modal {
             position: fixed;
             top: 0;
@@ -851,7 +863,6 @@
             background-color: #d0d0d0;
         }
         
-        /* Cart Modal Styles */
         .cart-modal {
             position: fixed;
             top: 0;
@@ -1000,7 +1011,6 @@
             font-style: italic;
         }
         
-        /* Loading indicator */
         .loading-indicator {
             display: inline-block;
             width: 20px;
@@ -1015,7 +1025,442 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Responsive */
+        .admin-login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .admin-login-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .admin-login-content {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .admin-login-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--admin-color);
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--admin-color);
+        }
+        
+        .admin-login-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .admin-login-btn {
+            background-color: var(--admin-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .admin-login-btn:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(63,81,181,0.3);
+        }
+        
+        .admin-cancel-btn {
+            background-color: #e0e0e0;
+            color: #666;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .admin-cancel-btn:hover {
+            background-color: #d0d0d0;
+        }
+        
+        .error-message {
+            color: var(--primary);
+            margin-top: 15px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+            z-index: 6000;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .admin-panel.active {
+            display: block;
+        }
+        
+        .admin-header {
+            background-color: var(--admin-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .admin-header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .admin-nav-item {
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .admin-nav-item:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .admin-nav-item.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .admin-logout {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .admin-logout:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        
+        .admin-content {
+            padding: 30px 0;
+        }
+        
+        .admin-section {
+            display: none;
+        }
+        
+        .admin-section.active {
+            display: block;
+        }
+        
+        .admin-section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .admin-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-btn {
+            background-color: var(--admin-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .admin-btn:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(63,81,181,0.3);
+        }
+        
+        .admin-btn-danger {
+            background-color: var(--primary);
+        }
+        
+        .admin-btn-danger:hover {
+            background-color: #b71c1c;
+            box-shadow: 0 5px 10px rgba(211,47,47,0.3);
+        }
+        
+        .admin-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .admin-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .admin-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .admin-form-group input,
+        .admin-form-group textarea,
+        .admin-form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .admin-form-group input:focus,
+        .admin-form-group textarea:focus,
+        .admin-form-group select:focus {
+            outline: none;
+            border-color: var(--admin-color);
+        }
+        
+        .admin-form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .admin-form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .admin-menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .admin-menu-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .admin-menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .admin-menu-image {
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .admin-menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .admin-menu-content {
+            padding: 20px;
+        }
+        
+        .admin-menu-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .admin-menu-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .admin-menu-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .admin-edit-btn {
+            background-color: var(--warning);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .admin-edit-btn:hover {
+            background-color: #e65100;
+            transform: translateY(-2px);
+        }
+        
+        .admin-delete-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .admin-delete-btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+        
+        .admin-image-upload {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .admin-image-preview {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .admin-image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .admin-image-upload-btn {
+            background-color: var(--light);
+            color: var(--dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .admin-image-upload-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .admin-success-message {
+            background-color: var(--success);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .admin-error-message {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -1093,6 +1538,20 @@
             .cart-item-actions {
                 width: 100%;
                 justify-content: space-between;
+            }
+            
+            .admin-header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .admin-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .admin-menu-list {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -1253,6 +1712,14 @@
             .cart-modal-total {
                 font-size: 1.2rem;
             }
+            
+            .admin-login-content {
+                padding: 30px 20px;
+            }
+            
+            .admin-form {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1276,6 +1743,9 @@
                 <a href="https://t.me/tethoshome" target="_blank">
                     <i class="fab fa-telegram"></i> Telegram
                 </a>
+                <button class="admin-login-btn" id="adminLoginBtn" onclick="showAdminLogin()">
+                    <i class="fas fa-user-shield"></i> Admin
+                </button>
             </div>
         </div>
     </header>
@@ -1331,7 +1801,8 @@
                 <h2>Our Popular Dishes</h2>
                 <p>Authentic Japanese cuisine, all under $15</p>
             </div>
-            <div class="menu-grid">
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items are hardcoded here as fallback -->
                 <div class="menu-item">
                     <div class="menu-image-container">
                         <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sushi Platter">
@@ -1340,73 +1811,73 @@
                         <h3 class="menu-title">Sushi Platter</h3>
                         <p class="menu-description">Assorted fresh sushi with salmon, tuna, and shrimp, served with wasabi and pickled ginger</p>
                         <div class="menu-footer">
-                            <span class="price">$14.99</span>
-                            <button type="button" class="order-btn" data-menu="Sushi Platter" data-price="14.99">Order</button>
+                            <span class="price">$5.99</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Sushi Platter', 14.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ramen Bowl">
+                        <img src="https://glebekitchen.com/wp-content/uploads/2017/02/ramenfront.jpg" alt="Ramen Bowl">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Tonkotsu Ramen</h3>
                         <p class="menu-description">Rich pork bone broth with tender chashu pork, soft-boiled egg, and fresh noodles</p>
                         <div class="menu-footer">
-                            <span class="price">$12.99</span>
-                            <button type="button" class="order-btn" data-menu="Tonkotsu Ramen" data-price="12.99">Order</button>
+                            <span class="price">$4.99</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Tonkotsu Ramen', 12.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tempura">
+                        <img src="https://img.freepik.com/premium-photo/tempting-tempura-creations_1036998-89472.jpg" alt="Tempura">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Tempura Assortment</h3>
                         <p class="menu-description">Lightly battered and fried shrimp, vegetables, and served with tentsuyu dipping sauce</p>
                         <div class="menu-footer">
-                            <span class="price">$11.99</span>
-                            <button type="button" class="order-btn" data-menu="Tempura Assortment" data-price="11.99">Order</button>
+                            <span class="price">$6.99</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Tempura Assortment', 11.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teriyaki Chicken">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.yRJvKv8YXHEaPCOmoKPL8wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Teriyaki Chicken">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Teriyaki Chicken</h3>
                         <p class="menu-description">Grilled chicken glazed with our house-made teriyaki sauce, served with steamed rice</p>
                         <div class="menu-footer">
-                            <span class="price">$10.99</span>
-                            <button type="button" class="order-btn" data-menu="Teriyaki Chicken" data-price="10.99">Order</button>
+                            <span class="price">$3.99</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Teriyaki Chicken', 10.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://th.bing.com/th/id/R.4dd50c55210350d65038492a1084925e?rik=QxqB5QHi7P3lLQ&riu=http%3a%2f%2fmedia.carbfree.cooking%2f2016%2f07%2fmiso-soup-big.jpg&ehk=DGlMBkZvY%2fxuB3W%2bBvVwGyyr7foDScbAZkeRlQVZO%2b4%3d&risl=&pid=ImgRaw&r=0" alt="Miso Soup">
+                        <img src="https://www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg" alt="Miso Soup">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Miso Soup</h3>
                         <p class="menu-description">Traditional Japanese soup with fermented soybean paste, tofu, and seaweed</p>
                         <div class="menu-footer">
-                            <span class="price">$3.99</span>
-                            <button type="button" class="order-btn" data-menu="Miso Soup" data-price="3.99">Order</button>
+                            <span class="price">$2.99</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Miso Soup', 3.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bento Box">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*pfbYYn7wUSmNQFqtirn21A.png" alt="Bento Box">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Bento Box</h3>
                         <p class="menu-description">Complete meal with rice, grilled fish, pickled vegetables, and miso soup</p>
                         <div class="menu-footer">
-                            <span class="price">$13.99</span>
-                            <button type="button" class="order-btn" data-menu="Bento Box" data-price="13.99">Order</button>
+                            <span class="price">$3.5</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('Bento Box', 13.99)">Order</button>
                         </div>
                     </div>
                 </div>
@@ -1485,7 +1956,7 @@
     </footer>
 
     <!-- Cart Summary -->
-    <div class="cart-summary" id="cartSummary">
+    <div class="cart-summary" id="cartSummary" onclick="displayCartModal()">
         <div class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
         </div>
@@ -1498,23 +1969,23 @@
     <!-- Quantity Selection Modal -->
     <div class="quantity-modal" id="quantityModal">
         <div class="modal-content">
-            <button type="button" class="modal-close" id="modalClose">
+            <button type="button" class="modal-close" onclick="closeQuantityModal()">
                 <i class="fas fa-times"></i>
             </button>
             <h3 class="modal-title">Select Quantity</h3>
             <div class="menu-name" id="selectedMenuName"></div>
             <div class="quantity-selector">
-                <button type="button" class="quantity-btn" id="decreaseBtn">
+                <button type="button" class="quantity-btn" onclick="decreaseQuantity()">
                     <i class="fas fa-minus"></i>
                 </button>
                 <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="99">
-                <button type="button" class="quantity-btn" id="increaseBtn">
+                <button type="button" class="quantity-btn" onclick="increaseQuantity()">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" id="cancelBtn">Cancel</button>
-                <button type="button" class="modal-btn confirm-btn" id="confirmBtn">Add to Cart</button>
+                <button type="button" class="modal-btn cancel-btn" onclick="closeQuantityModal()">Cancel</button>
+                <button type="button" class="modal-btn confirm-btn" onclick="confirmAddToCart()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -1522,7 +1993,7 @@
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-modal-content">
-            <button type="button" class="cart-modal-close" id="cartModalClose">
+            <button type="button" class="cart-modal-close" onclick="closeCartModal()">
                 <i class="fas fa-times"></i>
             </button>
             <h3 class="cart-modal-title">Your Cart</h3>
@@ -1532,21 +2003,366 @@
             <div class="cart-modal-footer">
                 <div class="cart-modal-total" id="cartModalTotal">$0.00</div>
                 <div class="cart-modal-actions">
-                    <button type="button" class="modal-btn clear-cart-btn" id="clearCartBtn">Clear</button>
-                    <button type="button" class="modal-btn send-order-btn" id="sendOrderBtn">Place Order</button>
+                    <button type="button" class="modal-btn clear-cart-btn" onclick="clearCart()">Clear</button>
+                    <button type="button" class="modal-btn send-order-btn" onclick="sendOrder()">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="admin-login-modal" id="adminLoginModal">
+        <div class="admin-login-content">
+            <h2 class="admin-login-title">Admin Login</h2>
+            <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                <div class="form-group">
+                    <label for="adminUsername">Username</label>
+                    <input type="text" id="adminUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <div class="error-message" id="loginError">Invalid username or password</div>
+                <div class="admin-login-actions">
+                    <button type="button" class="admin-cancel-btn" onclick="hideAdminLogin()">Cancel</button>
+                    <button type="submit" class="admin-login-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <div class="container admin-header-container">
+                <div class="admin-logo">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Tetho's Home Admin</span>
+                </div>
+                <nav class="admin-nav">
+                    <div class="admin-nav-item active" onclick="showAdminSection('menu')">Menu</div>
+                    <div class="admin-nav-item" onclick="showAdminSection('info')">Restaurant Info</div>
+                    <div class="admin-nav-item" onclick="showAdminSection('contact')">Contact</div>
+                    <div class="admin-nav-item" onclick="showAdminSection('delivery')">Delivery</div>
+                </nav>
+                <button class="admin-logout" onclick="adminLogout()">Logout</button>
+            </div>
+        </div>
+        <div class="container admin-content">
+            <!-- Menu Section -->
+            <div class="admin-section active" id="menuSection">
+                <h2 class="admin-section-title">Menu Management</h2>
+                
+                <div class="admin-success-message" id="menuSuccessMessage">Changes saved successfully!</div>
+                <div class="admin-error-message" id="menuErrorMessage">Error saving changes!</div>
+                
+                <div class="admin-card">
+                    <div class="admin-card-title">
+                        <span>Add New Menu Item</span>
+                    </div>
+                    <form id="addMenuItemForm" onsubmit="handleAddMenuItem(event)">
+                        <div class="admin-form">
+                            <div class="admin-form-group">
+                                <label for="menuItemName">Item Name</label>
+                                <input type="text" id="menuItemName" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="menuItemPrice">Price ($)</label>
+                                <input type="number" id="menuItemPrice" step="0.01" min="0" required>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="menuItemDescription">Description</label>
+                                <textarea id="menuItemDescription" required></textarea>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label>Item Image</label>
+                                <div class="admin-image-upload">
+                                    <div class="admin-image-preview" id="newItemImagePreview">
+                                        <i class="fas fa-image" style="font-size: 3rem; color: #ccc;"></i>
+                                    </div>
+                                    <div>
+                                        <input type="file" id="newItemImage" accept="image/*" style="display: none;" onchange="previewNewItemImage(event)">
+                                        <button type="button" class="admin-image-upload-btn" onclick="document.getElementById('newItemImage').click()">Choose Image</button>
+                                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Or enter image URL:</p>
+                                        <input type="url" id="newItemImageUrl" placeholder="https://example.com/image.jpg" oninput="previewNewItemImageUrl(this.value)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-form-actions">
+                            <button type="submit" class="admin-btn">Add Menu Item</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="admin-card">
+                    <div class="admin-card-title">
+                        <span>Current Menu Items</span>
+                    </div>
+                    <div class="admin-menu-list" id="adminMenuList">
+                        <!-- Menu items will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant Info Section -->
+            <div class="admin-section" id="infoSection">
+                <h2 class="admin-section-title">Restaurant Information</h2>
+                
+                <div class="admin-success-message" id="infoSuccessMessage">Changes saved successfully!</div>
+                <div class="admin-error-message" id="infoErrorMessage">Error saving changes!</div>
+                
+                <div class="admin-card">
+                    <div class="admin-card-title">
+                        <span>Basic Information</span>
+                    </div>
+                    <form id="restaurantInfoForm" onsubmit="handleRestaurantInfo(event)">
+                        <div class="admin-form">
+                            <div class="admin-form-group">
+                                <label for="restaurantName">Restaurant Name</label>
+                                <input type="text" id="restaurantName" value="Tetho's Home">
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="restaurantTagline">Tagline</label>
+                                <input type="text" id="restaurantTagline" value="Authentic Japanese Cuisine">
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="heroTitle">Hero Title</label>
+                                <input type="text" id="heroTitle" value="Authentic Japanese Cuisine Delivered">
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="heroDescription">Hero Description</label>
+                                <textarea id="heroDescription">Experience the true taste of Japan with our traditional dishes, prepared with authentic ingredients and techniques. All dishes under $15.</textarea>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label>Hero Background Image</label>
+                                <div class="admin-image-upload">
+                                    <div class="admin-image-preview" id="heroImagePreview">
+                                        <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Hero Background">
+                                    </div>
+                                    <div>
+                                        <input type="file" id="heroImage" accept="image/*" style="display: none;" onchange="previewHeroImage(event)">
+                                        <button type="button" class="admin-image-upload-btn" onclick="document.getElementById('heroImage').click()">Change Image</button>
+                                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Or enter image URL:</p>
+                                        <input type="url" id="heroImageUrl" value="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" oninput="previewHeroImageUrl(this.value)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label>Logo Image</label>
+                                <div class="admin-image-upload">
+                                    <div class="admin-image-preview" id="logoImagePreview">
+                                        <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Logo">
+                                    </div>
+                                    <div>
+                                        <input type="file" id="logoImage" accept="image/*" style="display: none;" onchange="previewLogoImage(event)">
+                                        <button type="button" class="admin-image-upload-btn" onclick="document.getElementById('logoImage').click()">Change Image</button>
+                                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Or enter image URL:</p>
+                                        <input type="url" id="logoImageUrl" value="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" oninput="previewLogoImageUrl(this.value)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-form-actions">
+                            <button type="submit" class="admin-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="admin-section" id="contactSection">
+                <h2 class="admin-section-title">Contact Information</h2>
+                
+                <div class="admin-success-message" id="contactSuccessMessage">Changes saved successfully!</div>
+                <div class="admin-error-message" id="contactErrorMessage">Error saving changes!</div>
+                
+                <div class="admin-card">
+                    <div class="admin-card-title">
+                        <span>Contact Details</span>
+                    </div>
+                    <form id="contactInfoForm" onsubmit="handleContactInfo(event)">
+                        <div class="admin-form">
+                            <div class="admin-form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" id="phoneNumber" value="016 980097">
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="telegramLink">Telegram Link</label>
+                                <input type="url" id="telegramLink" value="https://t.me/tethoshome">
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="facebookLink">Facebook Link</label>
+                                <input type="url" id="facebookLink" value="https://www.facebook.com/tethoshome">
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="instagramLink">Instagram Link</label>
+                                <input type="url" id="instagramLink" value="https://www.instagram.com/tethoshome">
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="contactNote">Contact Note</label>
+                                <textarea id="contactNote">Please note: We are a delivery-only restaurant and do not accept dine-in customers. Please order through delivery apps or by phone.</textarea>
+                            </div>
+                        </div>
+                        <div class="admin-form-actions">
+                            <button type="submit" class="admin-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Delivery Section -->
+            <div class="admin-section" id="deliverySection">
+                <h2 class="admin-section-title">Delivery Information</h2>
+                
+                <div class="admin-success-message" id="deliverySuccessMessage">Changes saved successfully!</div>
+                <div class="admin-error-message" id="deliveryErrorMessage">Error saving changes!</div>
+                
+                <div class="admin-card">
+                    <div class="admin-card-title">
+                        <span>Delivery Options</span>
+                    </div>
+                    <form id="deliveryInfoForm" onsubmit="handleDeliveryInfo(event)">
+                        <div class="admin-form">
+                            <div class="admin-form-group">
+                                <label for="deliveryTitle">Delivery Title</label>
+                                <input type="text" id="deliveryTitle" value="How to Order">
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="deliveryDescription">Delivery Description</label>
+                                <textarea id="deliveryDescription">We offer delivery through popular food delivery services. You can order your favorite Japanese dishes through any of these platforms:</textarea>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label>Delivery Image</label>
+                                <div class="admin-image-upload">
+                                    <div class="admin-image-preview" id="deliveryImagePreview">
+                                        <img src="https://asian-recipe.com/wp-content/uploads/2024/02/best-Japanese-restaurant-jpg.webp" alt="Delivery">
+                                    </div>
+                                    <div>
+                                        <input type="file" id="deliveryImage" accept="image/*" style="display: none;" onchange="previewDeliveryImage(event)">
+                                        <button type="button" class="admin-image-upload-btn" onclick="document.getElementById('deliveryImage').click()">Change Image</button>
+                                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Or enter image URL:</p>
+                                        <input type="url" id="deliveryImageUrl" value="https://asian-recipe.com/wp-content/uploads/2024/02/best-Japanese-restaurant-jpg.webp" oninput="previewDeliveryImageUrl(this.value)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label>Delivery Apps</label>
+                                <div id="deliveryAppsList">
+                                    <div class="admin-form-group" style="display: flex; gap: 10px; align-items: center;">
+                                        <input type="text" class="delivery-app-name" value="Grab Order" style="flex: 1;">
+                                        <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+                                    </div>
+                                    <div class="admin-form-group" style="display: flex; gap: 10px; align-items: center;">
+                                        <input type="text" class="delivery-app-name" value="Food Panda" style="flex: 1;">
+                                        <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+                                    </div>
+                                    <div class="admin-form-group" style="display: flex; gap: 10px; align-items: center;">
+                                        <input type="text" class="delivery-app-name" value="Woownow" style="flex: 1;">
+                                        <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+                                    </div>
+                                    <div class="admin-form-group" style="display: flex; gap: 10px; align-items: center;">
+                                        <input type="text" class="delivery-app-name" value="Wingmall" style="flex: 1;">
+                                        <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="admin-btn" onclick="addDeliveryApp()">Add App</button>
+                            </div>
+                            <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                <label for="deliveryNote">Delivery Note</label>
+                                <textarea id="deliveryNote">Or contact us directly via Telegram to place your order.</textarea>
+                            </div>
+                        </div>
+                        <div class="admin-form-actions">
+                            <button type="submit" class="admin-btn">Save Changes</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Initialize data
+        let menuItems = [
+            {
+                id: 1,
+                name: "Sushi Platter",
+                price: 14.99,
+                description: "Assorted fresh sushi with salmon, tuna, and shrimp, served with wasabi and pickled ginger",
+                image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                name: "Tonkotsu Ramen",
+                price: 12.99,
+                description: "Rich pork bone broth with tender chashu pork, soft-boiled egg, and fresh noodles",
+                image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                name: "Tempura Assortment",
+                price: 11.99,
+                description: "Lightly battered and fried shrimp, vegetables, and served with tentsuyu dipping sauce",
+                image: "https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                name: "Teriyaki Chicken",
+                price: 10.99,
+                description: "Grilled chicken glazed with our house-made teriyaki sauce, served with steamed rice",
+                image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                name: "Miso Soup",
+                price: 3.99,
+                description: "Traditional Japanese soup with fermented soybean paste, tofu, and seaweed",
+                image: "https://th.bing.com/th/id/R.4dd50c55210350d65038492a1084925e?rik=QxqB5QHi7P3lLQ&riu=http%3a%2f%2fmedia.carbfree.cooking%2f2016%2f07%2fmiso-soup-big.jpg&ehk=DGlMBkZvY%2fxuB3W%2bBvVwGyyr7foDScbAZkeRlQVZO%2b4%3d&risl=&pid=ImgRaw&r=0"
+            },
+            {
+                id: 6,
+                name: "Bento Box",
+                price: 13.99,
+                description: "Complete meal with rice, grilled fish, pickled vegetables, and miso soup",
+                image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+        
+        let restaurantInfo = {
+            name: "Tetho's Home",
+            tagline: "Authentic Japanese Cuisine",
+            heroTitle: "Authentic Japanese Cuisine Delivered",
+            heroDescription: "Experience the true taste of Japan with our traditional dishes, prepared with authentic ingredients and techniques. All dishes under $15.",
+            heroImage: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80",
+            logoImage: "https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+        };
+        
+        let contactInfo = {
+            phoneNumber: "016 980097",
+            telegramLink: "https://t.me/tethoshome",
+            facebookLink: "https://www.facebook.com/tethoshome",
+            instagramLink: "https://www.instagram.com/tethoshome",
+            contactNote: "Please note: We are a delivery-only restaurant and do not accept dine-in customers. Please order through delivery apps or by phone."
+        };
+        
+        let deliveryInfo = {
+            title: "How to Order",
+            description: "We offer delivery through popular food delivery services. You can order your favorite Japanese dishes through any of these platforms:",
+            image: "https://asian-recipe.com/wp-content/uploads/2024/02/best-Japanese-restaurant-jpg.webp",
+            apps: ["Grab Order", "Food Panda", "Woownow", "Wingmall"],
+            note: "Or contact us directly via Telegram to place your order."
+        };
+        
         // Initialize cart
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let currentMenuItem = null;
         let currentPrice = null;
+        let isAdminLoggedIn = false;
         
-        // Google Apps Script URL - 
-        const webAppUrl = 'https://script.google.com/macros/s/AKfycbxlM13iPgBjQ4JZ44gmniwN5tPpU5wUuGIMN25NbPT4cucZYkTt_hXy5eqsfiRFVUaPcw/exec'; // 
+        // Google Apps Script URL
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbxXEdovhn5kOe-X85WHZ1f01hyqkB_BqWK2liFI2RW_PLm_Phxu1vMEB5Zr5hE6raWiNg/exec';
 
         // Function to save cart to localStorage
         function saveCart() {
@@ -1556,11 +2372,147 @@
         // Function to generate a unique device ID
         function generateDeviceId() {
             let deviceId = localStorage.getItem('deviceId');
-            if (!deviceId) {
+            if (!deviceId) {https://script.google.com/macros/s/AKfycbxXEdovhn5kOe-X85WHZ1f01hyqkB_BqWK2liFI2RW_PLm_Phxu1vMEB5Zr5hE6raWiNg/exec
                 deviceId = 'device_' + Math.random().toString(36).substr(2, 9);
                 localStorage.setItem('deviceId', deviceId);
             }
             return deviceId;
+        }
+
+        // Function to load data from localStorage
+        function loadData() {
+            const savedMenuItems = localStorage.getItem('menuItems');
+            if (savedMenuItems) {
+                menuItems = JSON.parse(savedMenuItems);
+            }
+            
+            const savedRestaurantInfo = localStorage.getItem('restaurantInfo');
+            if (savedRestaurantInfo) {
+                restaurantInfo = JSON.parse(savedRestaurantInfo);
+            }
+            
+            const savedContactInfo = localStorage.getItem('contactInfo');
+            if (savedContactInfo) {
+                contactInfo = JSON.parse(savedContactInfo);
+            }
+            
+            const savedDeliveryInfo = localStorage.getItem('deliveryInfo');
+            if (savedDeliveryInfo) {
+                deliveryInfo = JSON.parse(savedDeliveryInfo);
+            }
+        }
+
+        // Function to save data to localStorage
+        function saveData() {
+            localStorage.setItem('menuItems', JSON.stringify(menuItems));
+            localStorage.setItem('restaurantInfo', JSON.stringify(restaurantInfo));
+            localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
+            localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo));
+        }
+
+        // Function to render menu items
+        function renderMenuItems() {
+            const menuGrid = document.getElementById('menuGrid');
+            menuGrid.innerHTML = '';
+            
+            menuItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item';
+                menuItem.innerHTML = `
+                    <div class="menu-image-container">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">${item.name}</h3>
+                        <p class="menu-description">${item.description}</p>
+                        <div class="menu-footer">
+                            <span class="price">$${item.price.toFixed(2)}</span>
+                            <button type="button" class="order-btn" onclick="openQuantityModal('${item.name}', ${item.price})">Order</button>
+                        </div>
+                    </div>
+                `;
+                menuGrid.appendChild(menuItem);
+            });
+        }
+
+        // Function to render admin menu items
+        function renderAdminMenuItems() {
+            const adminMenuList = document.getElementById('adminMenuList');
+            adminMenuList.innerHTML = '';
+            
+            menuItems.forEach(item => {
+                const adminMenuItem = document.createElement('div');
+                adminMenuItem.className = 'admin-menu-item';
+                adminMenuItem.innerHTML = `
+                    <div class="admin-menu-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="admin-menu-content">
+                        <h3 class="admin-menu-title">${item.name}</h3>
+                        <div class="admin-menu-price">$${item.price.toFixed(2)}</div>
+                        <div class="admin-menu-actions">
+                            <button type="button" class="admin-edit-btn" onclick="editMenuItem(${item.id})">Edit</button>
+                            <button type="button" class="admin-delete-btn" onclick="deleteMenuItem(${item.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+                adminMenuList.appendChild(adminMenuItem);
+            });
+        }
+
+        // Function to update website content
+        function updateWebsiteContent() {
+            // Update restaurant info
+            document.querySelector('.logo-main').textContent = restaurantInfo.name;
+            document.querySelector('.logo-sub').textContent = restaurantInfo.tagline;
+            document.querySelector('.hero h1').textContent = restaurantInfo.heroTitle;
+            document.querySelector('.hero p').textContent = restaurantInfo.heroDescription;
+            document.querySelector('.hero').style.background = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${restaurantInfo.heroImage}')`;
+            document.querySelector('.hero').style.backgroundSize = 'cover';
+            document.querySelector('.hero').style.backgroundPosition = 'center';
+            document.querySelector('.logo-icon img').src = restaurantInfo.logoImage;
+            document.querySelector('.footer-logo-icon img').src = restaurantInfo.logoImage;
+            document.querySelector('.footer-logo-text').textContent = restaurantInfo.name;
+            
+            // Update contact info
+            document.querySelector('.contact-info a[href^="tel"]').innerHTML = `<i class="fas fa-phone"></i> ${contactInfo.phoneNumber}`;
+            document.querySelector('.contact-info a[href^="tel"]').href = `tel:${contactInfo.phoneNumber}`;
+            document.querySelector('.contact-info a[href^="https://t.me"]').href = contactInfo.telegramLink;
+            document.querySelector('.contact-info-large').innerHTML = `<i class="fas fa-phone"></i> ${contactInfo.phoneNumber}`;
+            document.querySelector('.contact-note').textContent = contactInfo.contactNote;
+            document.querySelector('.social-links a[href*="facebook"]').href = contactInfo.facebookLink;
+            document.querySelector('.social-links a[href*="instagram"]').href = contactInfo.instagramLink;
+            document.querySelector('.social-links a[href*="telegram"]').href = contactInfo.telegramLink;
+            
+            // Update delivery info
+            document.querySelector('.delivery-content h2').textContent = deliveryInfo.title;
+            document.querySelector('.delivery-content p').textContent = deliveryInfo.description;
+            document.querySelector('.delivery-image img').src = deliveryInfo.image;
+            document.querySelector('.delivery-content p:last-of-type').textContent = deliveryInfo.note;
+            
+            // Update delivery apps
+            const appList = document.querySelector('.app-list');
+            appList.innerHTML = '';
+            deliveryInfo.apps.forEach(app => {
+                const appBadge = document.createElement('div');
+                appBadge.className = 'app-badge';
+                appBadge.innerHTML = `
+                    <i class="fas fa-motorcycle"></i>
+                    <span>${app}</span>
+                `;
+                appList.appendChild(appBadge);
+            });
+        }
+
+        // Function to show message
+        function showMessage(messageId, message) {
+            const messageElement = document.getElementById(messageId);
+            messageElement.textContent = message;
+            messageElement.style.display = 'block';
+            
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 3000);
         }
 
         // Function to add item to cart
@@ -1630,16 +2582,16 @@
                         </div>
                         <div class="cart-item-actions">
                             <div class="cart-item-quantity">
-                                <button class="quantity-btn decrease-quantity" data-id="${item.id}">
+                                <button class="quantity-btn decrease-quantity" onclick="updateCartItemQuantity('${item.id}', ${item.quantity - 1})">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <input type="number" class="quantity-input cart-quantity-input" value="${item.quantity}" min="1" max="99" data-id="${item.id}">
-                                <button class="quantity-btn increase-quantity" data-id="${item.id}">
+                                <input type="number" class="quantity-input cart-quantity-input" value="${item.quantity}" min="1" max="99" onchange="updateCartItemQuantity('${item.id}', this.value)">
+                                <button class="quantity-btn increase-quantity" onclick="updateCartItemQuantity('${item.id}', ${item.quantity + 1})">
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </div>
                             <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
-                            <button class="remove-item" data-id="${item.id}">
+                            <button class="remove-item" onclick="removeFromCart('${item.id}')">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
@@ -1664,7 +2616,7 @@
                     removeFromCart(itemId);
                 } else {
                     // Update quantity
-                    item.quantity = newQuantity;
+                    item.quantity = parseInt(newQuantity);
                     saveCart();
                     updateCartSummary();
                     
@@ -1840,137 +2792,504 @@
             }, 3000);
         }
 
-        // Event listeners
+        // Admin functions
+        function showAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('active');
+        }
+
+        function hideAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('active');
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Simple authentication
+            if (username === 'admin' && password === '016980097') {
+                isAdminLoggedIn = true;
+                document.getElementById('adminLoginModal').classList.remove('active');
+                document.getElementById('adminPanel').classList.add('active');
+                
+                // Reset form
+                document.getElementById('adminUsername').value = '';
+                document.getElementById('adminPassword').value = '';
+                document.getElementById('loginError').style.display = 'none';
+                
+                // Render admin menu items
+                renderAdminMenuItems();
+                
+                // Populate admin forms with current data
+                document.getElementById('restaurantName').value = restaurantInfo.name;
+                document.getElementById('restaurantTagline').value = restaurantInfo.tagline;
+                document.getElementById('heroTitle').value = restaurantInfo.heroTitle;
+                document.getElementById('heroDescription').value = restaurantInfo.heroDescription;
+                document.getElementById('heroImageUrl').value = restaurantInfo.heroImage;
+                document.getElementById('logoImageUrl').value = restaurantInfo.logoImage;
+                document.getElementById('heroImagePreview').innerHTML = `<img src="${restaurantInfo.heroImage}" alt="Hero Background">`;
+                document.getElementById('logoImagePreview').innerHTML = `<img src="${restaurantInfo.logoImage}" alt="Logo">`;
+                
+                document.getElementById('phoneNumber').value = contactInfo.phoneNumber;
+                document.getElementById('telegramLink').value = contactInfo.telegramLink;
+                document.getElementById('facebookLink').value = contactInfo.facebookLink;
+                document.getElementById('instagramLink').value = contactInfo.instagramLink;
+                document.getElementById('contactNote').value = contactInfo.contactNote;
+                
+                document.getElementById('deliveryTitle').value = deliveryInfo.title;
+                document.getElementById('deliveryDescription').value = deliveryInfo.description;
+                document.getElementById('deliveryImageUrl').value = deliveryInfo.image;
+                document.getElementById('deliveryImagePreview').innerHTML = `<img src="${deliveryInfo.image}" alt="Delivery">`;
+                document.getElementById('deliveryNote').value = deliveryInfo.note;
+                
+                // Populate delivery apps
+                const deliveryAppsList = document.getElementById('deliveryAppsList');
+                deliveryAppsList.innerHTML = '';
+                deliveryInfo.apps.forEach(app => {
+                    const appDiv = document.createElement('div');
+                    appDiv.className = 'admin-form-group';
+                    appDiv.style.display = 'flex';
+                    appDiv.style.gap = '10px';
+                    appDiv.style.alignItems = 'center';
+                    appDiv.innerHTML = `
+                        <input type="text" class="delivery-app-name" value="${app}" style="flex: 1;">
+                        <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+                    `;
+                    deliveryAppsList.appendChild(appDiv);
+                });
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminPanel').classList.remove('active');
+        }
+
+        function showAdminSection(section) {
+            // Remove active class from all items and sections
+            document.querySelectorAll('.admin-nav-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.admin-section').forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked item
+            event.target.classList.add('active');
+            
+            // Show corresponding section
+            document.getElementById(section + 'Section').classList.add('active');
+        }
+
+        function handleAddMenuItem(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('menuItemName').value;
+            const price = parseFloat(document.getElementById('menuItemPrice').value);
+            const description = document.getElementById('menuItemDescription').value;
+            const imageUrl = document.getElementById('newItemImageUrl').value;
+            
+            // Create new menu item
+            const newItem = {
+                id: Date.now(),
+                name: name,
+                price: price,
+                description: description,
+                image: imageUrl || 'https://via.placeholder.com/800x600?text=No+Image'
+            };
+            
+            // Add to menu items
+            menuItems.push(newItem);
+            
+            // Save data
+            saveData();
+            
+            // Update UI
+            renderMenuItems();
+            renderAdminMenuItems();
+            
+            // Reset form
+            document.getElementById('addMenuItemForm').reset();
+            document.getElementById('newItemImagePreview').innerHTML = '<i class="fas fa-image" style="font-size: 3rem; color: #ccc;"></i>';
+            
+            // Show success message
+            showMessage('menuSuccessMessage', 'Menu item added successfully!');
+        }
+
+        function editMenuItem(id) {
+            const item = menuItems.find(item => item.id === id);
+            
+            if (item) {
+                // Create edit modal
+                const editModal = document.createElement('div');
+                editModal.className = 'quantity-modal active';
+                editModal.id = 'editMenuItemModal';
+                editModal.innerHTML = `
+                    <div class="modal-content" style="max-width: 600px;">
+                        <button type="button" class="modal-close" onclick="closeEditModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h3 class="modal-title">Edit Menu Item</h3>
+                        <form onsubmit="saveMenuItem(event, ${id})">
+                            <div class="admin-form">
+                                <div class="admin-form-group">
+                                    <label for="editMenuItemName">Item Name</label>
+                                    <input type="text" id="editMenuItemName" value="${item.name}" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label for="editMenuItemPrice">Price ($)</label>
+                                    <input type="number" id="editMenuItemPrice" value="${item.price}" step="0.01" min="0" required>
+                                </div>
+                                <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                    <label for="editMenuItemDescription">Description</label>
+                                    <textarea id="editMenuItemDescription" required>${item.description}</textarea>
+                                </div>
+                                <div class="admin-form-group" style="grid-column: 1 / -1;">
+                                    <label>Item Image</label>
+                                    <div class="admin-image-upload">
+                                        <div class="admin-image-preview" id="editItemImagePreview">
+                                            <img src="${item.image}" alt="${item.name}">
+                                        </div>
+                                        <div>
+                                            <input type="file" id="editItemImage" accept="image/*" style="display: none;" onchange="previewEditItemImage(event)">
+                                            <button type="button" class="admin-image-upload-btn" onclick="document.getElementById('editItemImage').click()">Choose Image</button>
+                                            <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Or enter image URL:</p>
+                                            <input type="url" id="editItemImageUrl" value="${item.image}" oninput="previewEditItemImageUrl(this.value)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-actions">
+                                <button type="button" class="modal-btn cancel-btn" onclick="closeEditModal()">Cancel</button>
+                                <button type="submit" class="modal-btn confirm-btn">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                `;
+                
+                document.body.appendChild(editModal);
+            }
+        }
+
+        function closeEditModal() {
+            const editModal = document.getElementById('editMenuItemModal');
+            if (editModal) {
+                document.body.removeChild(editModal);
+            }
+        }
+
+        function saveMenuItem(event, id) {
+            event.preventDefault();
+            
+            const name = document.getElementById('editMenuItemName').value;
+            const price = parseFloat(document.getElementById('editMenuItemPrice').value);
+            const description = document.getElementById('editMenuItemDescription').value;
+            const imageUrl = document.getElementById('editItemImageUrl').value;
+            
+            // Find and update menu item
+            const itemIndex = menuItems.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                menuItems[itemIndex] = {
+                    id: id,
+                    name: name,
+                    price: price,
+                    description: description,
+                    image: imageUrl || menuItems[itemIndex].image
+                };
+                
+                // Save data
+                saveData();
+                
+                // Update UI
+                renderMenuItems();
+                renderAdminMenuItems();
+                
+                // Close modal
+                closeEditModal();
+                
+                // Show success message
+                showMessage('menuSuccessMessage', 'Menu item updated successfully!');
+            }
+        }
+
+        function deleteMenuItem(id) {
+            if (confirm('Are you sure you want to delete this menu item?')) {
+                menuItems = menuItems.filter(item => item.id !== id);
+                saveData();
+                renderMenuItems();
+                renderAdminMenuItems();
+                showMessage('menuSuccessMessage', 'Menu item deleted successfully!');
+            }
+        }
+
+        function handleRestaurantInfo(event) {
+            event.preventDefault();
+            
+            // Update restaurant info
+            restaurantInfo = {
+                name: document.getElementById('restaurantName').value,
+                tagline: document.getElementById('restaurantTagline').value,
+                heroTitle: document.getElementById('heroTitle').value,
+                heroDescription: document.getElementById('heroDescription').value,
+                heroImage: document.getElementById('heroImageUrl').value,
+                logoImage: document.getElementById('logoImageUrl').value
+            };
+            
+            // Save data
+            saveData();
+            
+            // Update website content
+            updateWebsiteContent();
+            
+            // Show success message
+            showMessage('infoSuccessMessage', 'Restaurant information updated successfully!');
+        }
+
+        function handleContactInfo(event) {
+            event.preventDefault();
+            
+            // Update contact info
+            contactInfo = {
+                phoneNumber: document.getElementById('phoneNumber').value,
+                telegramLink: document.getElementById('telegramLink').value,
+                facebookLink: document.getElementById('facebookLink').value,
+                instagramLink: document.getElementById('instagramLink').value,
+                contactNote: document.getElementById('contactNote').value
+            };
+            
+            // Save data
+            saveData();
+            
+            // Update website content
+            updateWebsiteContent();
+            
+            // Show success message
+            showMessage('contactSuccessMessage', 'Contact information updated successfully!');
+        }
+
+        function handleDeliveryInfo(event) {
+            event.preventDefault();
+            
+            // Get delivery apps
+            const appInputs = document.querySelectorAll('.delivery-app-name');
+            const apps = [];
+            appInputs.forEach(input => {
+                if (input.value.trim()) {
+                    apps.push(input.value.trim());
+                }
+            });
+            
+            // Update delivery info
+            deliveryInfo = {
+                title: document.getElementById('deliveryTitle').value,
+                description: document.getElementById('deliveryDescription').value,
+                image: document.getElementById('deliveryImageUrl').value,
+                apps: apps,
+                note: document.getElementById('deliveryNote').value
+            };
+            
+            // Save data
+            saveData();
+            
+            // Update website content
+            updateWebsiteContent();
+            
+            // Show success message
+            showMessage('deliverySuccessMessage', 'Delivery information updated successfully!');
+        }
+
+        function addDeliveryApp() {
+            const deliveryAppsList = document.getElementById('deliveryAppsList');
+            const appDiv = document.createElement('div');
+            appDiv.className = 'admin-form-group';
+            appDiv.style.display = 'flex';
+            appDiv.style.gap = '10px';
+            appDiv.style.alignItems = 'center';
+            appDiv.innerHTML = `
+                <input type="text" class="delivery-app-name" value="" style="flex: 1;" placeholder="App name">
+                <button type="button" class="admin-btn-danger remove-app-btn" onclick="removeDeliveryApp(this)">Remove</button>
+            `;
+            deliveryAppsList.appendChild(appDiv);
+        }
+
+        function removeDeliveryApp(button) {
+            if (confirm('Are you sure you want to remove this app?')) {
+                button.closest('.admin-form-group').remove();
+            }
+        }
+
+        // Image preview functions
+        function previewNewItemImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('newItemImagePreview').innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    document.getElementById('newItemImageUrl').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewNewItemImageUrl(url) {
+            if (url) {
+                document.getElementById('newItemImagePreview').innerHTML = `<img src="${url}" alt="Preview">`;
+            } else {
+                document.getElementById('newItemImagePreview').innerHTML = '<i class="fas fa-image" style="font-size: 3rem; color: #ccc;"></i>';
+            }
+        }
+
+        function previewEditItemImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('editItemImagePreview').innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    document.getElementById('editItemImageUrl').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewEditItemImageUrl(url) {
+            if (url) {
+                document.getElementById('editItemImagePreview').innerHTML = `<img src="${url}" alt="Preview">`;
+            } else {
+                document.getElementById('editItemImagePreview').innerHTML = '<i class="fas fa-image" style="font-size: 3rem; color: #ccc;"></i>';
+            }
+        }
+
+        function previewHeroImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('heroImagePreview').innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    document.getElementById('heroImageUrl').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewHeroImageUrl(url) {
+            if (url) {
+                document.getElementById('heroImagePreview').innerHTML = `<img src="${url}" alt="Preview">`;
+            }
+        }
+
+        function previewLogoImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('logoImagePreview').innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    document.getElementById('logoImageUrl').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewLogoImageUrl(url) {
+            if (url) {
+                document.getElementById('logoImagePreview').innerHTML = `<img src="${url}" alt="Preview">`;
+            }
+        }
+
+        function previewDeliveryImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('deliveryImagePreview').innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    document.getElementById('deliveryImageUrl').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewDeliveryImageUrl(url) {
+            if (url) {
+                document.getElementById('deliveryImagePreview').innerHTML = `<img src="${url}" alt="Preview">`;
+            }
+        }
+
+        // Quantity modal functions
+        function openQuantityModal(menuName, price) {
+            currentMenuItem = menuName;
+            currentPrice = price;
+            
+            // Set menu name in modal
+            document.getElementById('selectedMenuName').textContent = menuName;
+            
+            // Reset quantity to 1
+            document.getElementById('quantityInput').value = 1;
+            
+            // Show modal
+            document.getElementById('quantityModal').classList.add('active');
+        }
+
+        function closeQuantityModal() {
+            document.getElementById('quantityModal').classList.remove('active');
+        }
+
+        function decreaseQuantity() {
+            let currentValue = parseInt(document.getElementById('quantityInput').value);
+            if (currentValue > 1) {
+                document.getElementById('quantityInput').value = currentValue - 1;
+            }
+        }
+
+        function increaseQuantity() {
+            let currentValue = parseInt(document.getElementById('quantityInput').value);
+            if (currentValue < 99) {
+                document.getElementById('quantityInput').value = currentValue + 1;
+            }
+        }
+
+        function confirmAddToCart() {
+            const quantity = parseInt(document.getElementById('quantityInput').value);
+            
+            // Add to cart
+            addToCart(currentMenuItem, currentPrice, quantity);
+            
+            // Close modal
+            closeQuantityModal();
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').classList.remove('active');
+        }
+
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Load data from localStorage
+            loadData();
+            
+            // Initialize website content
+            updateWebsiteContent();
+            
+            // Render menu items
+            renderMenuItems();
+            
             // Initialize cart summary
             updateCartSummary();
             
-            // Order button click handlers
-            const orderButtons = document.querySelectorAll('.order-btn');
-            const quantityModal = document.getElementById('quantityModal');
-            const modalClose = document.getElementById('modalClose');
-            const cancelBtn = document.getElementById('cancelBtn');
-            const confirmBtn = document.getElementById('confirmBtn');
-            const decreaseBtn = document.getElementById('decreaseBtn');
-            const increaseBtn = document.getElementById('increaseBtn');
-            const quantityInput = document.getElementById('quantityInput');
-            const selectedMenuName = document.getElementById('selectedMenuName');
-            
-            orderButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get menu name and price
-                    currentMenuItem = this.getAttribute('data-menu');
-                    currentPrice = this.getAttribute('data-price');
-                    
-                    // Set menu name in modal
-                    selectedMenuName.textContent = currentMenuItem;
-                    
-                    // Reset quantity to 1
-                    quantityInput.value = 1;
-                    
-                    // Show modal
-                    quantityModal.classList.add('active');
-                });
-            });
-
-            // Modal close handlers
-            modalClose.addEventListener('click', function() {
-                quantityModal.classList.remove('active');
-            });
-
-            cancelBtn.addEventListener('click', function() {
-                quantityModal.classList.remove('active');
-            });
-
-            // Quantity adjustment handlers
-            decreaseBtn.addEventListener('click', function() {
-                let currentValue = parseInt(quantityInput.value);
-                if (currentValue > 1) {
-                    quantityInput.value = currentValue - 1;
-                }
-            });
-
-            increaseBtn.addEventListener('click', function() {
-                let currentValue = parseInt(quantityInput.value);
-                if (currentValue < 99) {
-                    quantityInput.value = currentValue + 1;
-                }
-            });
-
-            // Confirm order handler - Add to cart
-            confirmBtn.addEventListener('click', function() {
-                const quantity = parseInt(quantityInput.value);
-                
-                // Add to cart
-                addToCart(currentMenuItem, currentPrice, quantity);
-                
-                // Close modal
-                quantityModal.classList.remove('active');
-            });
-
             // Close modal when clicking outside
-            quantityModal.addEventListener('click', function(e) {
-                if (e.target === quantityModal) {
-                    quantityModal.classList.remove('active');
+            document.getElementById('quantityModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeQuantityModal();
                 }
             });
-
-            // Cart summary click handler
-            document.getElementById('cartSummary').addEventListener('click', function() {
-                displayCartModal();
-            });
-
-            // Cart modal close handler
-            document.getElementById('cartModalClose').addEventListener('click', function() {
-                document.getElementById('cartModal').classList.remove('active');
-            });
-
-            // Clear cart button handler
-            document.getElementById('clearCartBtn').addEventListener('click', clearCart);
-
-            // Send order button handler
-            document.getElementById('sendOrderBtn').addEventListener('click', sendOrder);
-
-            // Cart item quantity adjustment handlers (event delegation)
-            document.addEventListener('click', function(e) {
-                if (e.target.closest('.decrease-quantity')) {
-                    const itemId = e.target.closest('.decrease-quantity').getAttribute('data-id');
-                    const input = document.querySelector(`.cart-quantity-input[data-id="${itemId}"]`);
-                    const currentValue = parseInt(input.value);
-                    if (currentValue > 1) {
-                        input.value = currentValue - 1;
-                        updateCartItemQuantity(itemId, currentValue - 1);
-                    }
-                } else if (e.target.closest('.increase-quantity')) {
-                    const itemId = e.target.closest('.increase-quantity').getAttribute('data-id');
-                    const input = document.querySelector(`.cart-quantity-input[data-id="${itemId}"]`);
-                    const currentValue = parseInt(input.value);
-                    if (currentValue < 99) {
-                        input.value = currentValue + 1;
-                        updateCartItemQuantity(itemId, currentValue + 1);
-                    }
-                } else if (e.target.closest('.remove-item')) {
-                    const itemId = e.target.closest('.remove-item').getAttribute('data-id');
-                    removeFromCart(itemId);
+            
+            document.getElementById('cartModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeCartModal();
                 }
             });
-
-            // Cart item quantity input change handler (event delegation)
-            document.addEventListener('change', function(e) {
-                if (e.target.classList.contains('cart-quantity-input')) {
-                    const itemId = e.target.getAttribute('data-id');
-                    const newQuantity = parseInt(e.target.value);
-                    if (!isNaN(newQuantity) && newQuantity > 0) {
-                        updateCartItemQuantity(itemId, newQuantity);
-                    } else {
-                        // Reset to previous value if invalid
-                        const item = cart.find(item => item.id === itemId);
-                        if (item) {
-                            e.target.value = item.quantity;
-                        }
-                    }
+            
+            document.getElementById('adminLoginModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    hideAdminLogin();
                 }
             });
         });
