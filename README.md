@@ -1811,72 +1811,72 @@
                         <h3 class="menu-title">Sushi Platter</h3>
                         <p class="menu-description">Assorted fresh sushi with salmon, tuna, and shrimp, served with wasabi and pickled ginger</p>
                         <div class="menu-footer">
-                            <span class="price">$5.99</span>
+                            <span class="price">$3.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Sushi Platter', 14.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://glebekitchen.com/wp-content/uploads/2017/02/ramenfront.jpg" alt="Ramen Bowl">
+                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ramen Bowl">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Tonkotsu Ramen</h3>
                         <p class="menu-description">Rich pork bone broth with tender chashu pork, soft-boiled egg, and fresh noodles</p>
                         <div class="menu-footer">
-                            <span class="price">$4.99</span>
+                            <span class="price">$5.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Tonkotsu Ramen', 12.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://img.freepik.com/premium-photo/tempting-tempura-creations_1036998-89472.jpg" alt="Tempura">
+                        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tempura">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Tempura Assortment</h3>
                         <p class="menu-description">Lightly battered and fried shrimp, vegetables, and served with tentsuyu dipping sauce</p>
                         <div class="menu-footer">
-                            <span class="price">$6.99</span>
+                            <span class="price">$4.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Tempura Assortment', 11.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.yRJvKv8YXHEaPCOmoKPL8wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Teriyaki Chicken">
+                        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teriyaki Chicken">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Teriyaki Chicken</h3>
                         <p class="menu-description">Grilled chicken glazed with our house-made teriyaki sauce, served with steamed rice</p>
                         <div class="menu-footer">
-                            <span class="price">$3.99</span>
+                            <span class="price">$4.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Teriyaki Chicken', 10.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg" alt="Miso Soup">
+                        <img src="https://th.bing.com/th/id/R.4dd50c55210350d65038492a1084925e?rik=QxqB5QHi7P3lLQ&riu=http%3a%2f%2fmedia.carbfree.cooking%2f2016%2f07%2fmiso-soup-big.jpg&ehk=DGlMBkZvY%2fxuB3W%2bBvVwGyyr7foDScbAZkeRlQVZO%2b4%3d&risl=&pid=ImgRaw&r=0" alt="Miso Soup">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Miso Soup</h3>
                         <p class="menu-description">Traditional Japanese soup with fermented soybean paste, tofu, and seaweed</p>
                         <div class="menu-footer">
-                            <span class="price">$2.99</span>
+                            <span class="price">$3.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Miso Soup', 3.99)">Order</button>
                         </div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-image-container">
-                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*pfbYYn7wUSmNQFqtirn21A.png" alt="Bento Box">
+                        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bento Box">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Bento Box</h3>
                         <p class="menu-description">Complete meal with rice, grilled fish, pickled vegetables, and miso soup</p>
                         <div class="menu-footer">
-                            <span class="price">$3.5</span>
+                            <span class="price">$6.99</span>
                             <button type="button" class="order-btn" onclick="openQuantityModal('Bento Box', 13.99)">Order</button>
                         </div>
                     </div>
@@ -2190,7 +2190,7 @@
                             </div>
                             <div class="admin-form-group">
                                 <label for="telegramLink">Telegram Link</label>
-                                <input type="url" id="telegramLink" value="https://t.me/tethoshome">
+                                <input type="url" id="telegramLink" value="https://t.me/franklin2588">
                             </div>
                             <div class="admin-form-group">
                                 <label for="facebookLink">Facebook Link</label>
@@ -2289,28 +2289,28 @@
             {
                 id: 1,
                 name: "Sushi Platter",
-                price: 14.99,
+                price: 3.99,
                 description: "Assorted fresh sushi with salmon, tuna, and shrimp, served with wasabi and pickled ginger",
                 image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             },
             {
                 id: 2,
                 name: "Tonkotsu Ramen",
-                price: 12.99,
+                price: 5.99,
                 description: "Rich pork bone broth with tender chashu pork, soft-boiled egg, and fresh noodles",
                 image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             },
             {
                 id: 3,
                 name: "Tempura Assortment",
-                price: 11.99,
+                price: 4.99,
                 description: "Lightly battered and fried shrimp, vegetables, and served with tentsuyu dipping sauce",
                 image: "https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             },
             {
                 id: 4,
                 name: "Teriyaki Chicken",
-                price: 10.99,
+                price: 4.99,
                 description: "Grilled chicken glazed with our house-made teriyaki sauce, served with steamed rice",
                 image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             },
@@ -2324,7 +2324,7 @@
             {
                 id: 6,
                 name: "Bento Box",
-                price: 13.99,
+                price: 6.99,
                 description: "Complete meal with rice, grilled fish, pickled vegetables, and miso soup",
                 image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             }
@@ -2341,7 +2341,7 @@
         
         let contactInfo = {
             phoneNumber: "016 980097",
-            telegramLink: "https://t.me/tethoshome",
+            telegramLink: "https://t.me/franklin2588",
             facebookLink: "https://www.facebook.com/tethoshome",
             instagramLink: "https://www.instagram.com/tethoshome",
             contactNote: "Please note: We are a delivery-only restaurant and do not accept dine-in customers. Please order through delivery apps or by phone."
